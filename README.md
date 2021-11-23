@@ -1,5 +1,10 @@
-# TemplateTogether
-Frontend and Backend running on one Port!
+# Frontend Community
 
+Frontend is built using React.
+Backend is built using Django.
 
-Kindly run the server on port 8002!
+Frontend and Backend are running on one Port!
+
+Template folder is the django project folder where you can run the server.
+
+Kindly run the server on port 8012!
