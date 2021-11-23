@@ -1,0 +1,750 @@
+:root{
+--color_1:#000000;
+--color_2:#fefefe;
+--color_3:#0062e4;
+--color_4:#f9c733;
+--color_5:#808080;
+--color_6:#333232;
+--color_7:#242323;
+--color_8:#ffffff;
+--color_9:#f9c933;
+--color_10:#f7f7f7;
+--color_11:#494848;
+--color_12:#070707;
+--color_13:#1d1d1d;
+--color_14:#3b3a3a;
+--color_15:#2c2b2b;
+--color_16:#141313;
+--color_17:#181717;
+--color_18:#fcdb81;
+--color_19:#f7c847;
+--color_20:#1b1a1a;
+--color_21:#161616;
+
+}
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: OpenSans-Light, OpenSans, Arial, sans-serif;
+  margin-top: 40px;
+}
+.nav {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  height: 40px;
+  z-index: 5;
+  background-color: var(--color_1);
+}
+.courseSectionContainer {
+  position: relative;
+  padding-top: 50px;
+  height: calc(100vh - 40px);
+}
+
+.subCategoriesNav {
+  position: fixed;
+  top: 40px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  height: 50px;
+  background-color: var(--color_2);
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+  align-items: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.subCategoriesNav .folderStructure {
+  display: flex;
+}
+
+.subCategoriesNav .folderStructure .category a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--color_3);
+  position: relative;
+  background-color: var(--color_4)54;
+  font-size: 14px;
+  margin-right: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--color_5);
+}
+.subCategoriesNav .folderStructure .category a::after {
+  content: "";
+  position: absolute;
+  border: solid var(--color_6);
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 2px;
+  top: 50%;
+  right: -9px;
+  transform: translateY(-50%) rotate(-45deg);
+  -webkit-transform: translateY(-50%) rotate(-45deg);
+}
+
+.subCategoriesNav .folderStructure .category a.active {
+  color: var(--color_7);
+  background-color: var(--color_8);
+}
+.subCategoriesNav .folderStructure .category a.active::after {
+  display: none;
+}
+
+.subCategoriesNav .nextPrevButtons {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.subCategoriesNav .nextPrevButtons button {
+  border: none;
+  outline: none;
+  padding: 9px 15px;
+  height: 50%;
+  background-color: var(--color_4)54;
+  margin-right: 4px;
+
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--color_5);
+}
+
+.subCategoriesNav .nextPrevButtons .btnContainer:first-child button {
+;}
+.subCategoriesNav .nextPrevButtons button:hover {
+  background-color: var(--color_9);
+}
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  height: calc(100% - 50px);
+}
+
+.mainContainer .leftSideBar {
+  position: fixed;
+  left: 0px;
+  width: 260px;
+  height: calc(100% - 50px - 40px);
+  padding-top: 10px;
+  transition: 0.4s ease;
+  overflow: scroll;
+  z-index: 3;
+  transform: translateX(0%);
+  background-color: var(--color_8);
+}
+
+.mainContainer .leftSideBar.toggle {
+  transform: translateX(-100%);
+}
+
+.mainContainer .leftToggleBar,
+.mainContainer .rightToggleBar {
+  position: fixed;
+  width: 40px;
+  height: 100%;
+  background-color: var(--color_10);
+  padding: 8px 0px;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.mainContainer .leftToggleBar {
+  left: 260px;
+  transition: 0.4s ease;
+  z-index: 3;
+}
+.mainContainer .leftToggleBar.toggle {
+  left: 0px;
+}
+
+.mainContainer .rightToggleBar {
+  right: 300px;
+  transition: 0.4s ease;
+  z-index: 2;
+}
+.mainContainer .rightToggleBar.toggle {
+  right: 0px;
+}
+
+.mainContainer .centerContainer {
+  margin-left: 300px;
+  width: calc(100% - 260px - 300px - 80px);
+  height: 100%;
+  transition: 0.4s ease;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 500px) {
+  .mainContainer .centerContainer.leftToggle {
+    margin-left: 40px;
+    width: calc(100% - 300px - 80px);
+  }
+
+  .mainContainer .centerContainer.rightToggle {
+    width: calc(100% - 260px - 80px);
+  }
+
+  .mainContainer .centerContainer.leftToggle.rightToggle {
+    width: calc(100% - 80px);
+  }
+}
+
+.mainContainer .rightSideBar {
+  position: fixed;
+  right: 0px;
+  width: 300px;
+  height: calc(100% - 50px - 40px);
+  overflow: hidden;
+  transition: 0.4s ease;
+  z-index: 2;
+  transform: translateX(0%);
+  background-color: var(--color_8);
+}
+.mainContainer .rightSideBar.toggle {
+  transform: translateX(100%);
+}
+.mainContainer .rightSideBar .notesSection {
+  padding: 14px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.mainContainer .rightSideBar .notesSection .headingContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.mainContainer .rightSideBar .notesSection .headingContainer .main {
+  font-size: 23px;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .headingContainer
+  .btnContainer
+  button {
+  display: flex;
+  border: none;
+  outline: none;
+  padding: 7px;
+  font-size: 16px;
+  background-color: var(--color_8);
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .headingContainer
+  .btnContainer
+  button
+  img {
+  width: 20px;
+  margin-right: 10px;
+  border-radius: 20%;
+  transition: 0.3s ease;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .headingContainer
+  .btnContainer
+  button:hover
+  > img {
+  transform: scale(1.3);
+}
+
+.mainContainer .rightSideBar .notesSection .allNotesContainer {
+  display: flex;
+  justify-self: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+
+.mainContainer .rightSideBar .notesSection .allNotesContainer a {
+  display: flex;
+  border: none;
+  outline: none;
+  padding: 7px;
+  font-size: 16px;
+  background: none;
+  width: 100%;
+  background-color: var(--color_9);
+  justify-content: center;
+  border: 1px solid var(--color_9);
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.mainContainer .rightSideBar .notesSection .allNotesContainer a img {
+  width: 20px;
+  margin-right: 10px;
+  border-radius: 20%;
+}
+.mainContainer .rightSideBar .notesSection .allNotesContainer a:hover {
+  background-color: var(--color_8);
+  border: 1px solid var(--color_11);
+}
+.mainContainer .rightSideBar .notesSection .contentContainer {
+  flex-grow: 1;
+}
+
+.mainContainer .rightSideBar .notesSection .contentContainer .createNoteForm {
+  position: absolute;
+  left: 0%;
+  width: 100%;
+  transform: translateX(-100%);
+  transition: 0.4s ease;
+  background-color: var(--color_10);
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm.active {
+  transform: translateX(0%);
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .heading {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 6px 10px;
+  align-items: center;
+  font-size: 20px;
+  height: 50px;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .heading
+  .closeBtn {
+  width: 25px;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .heading
+  .closeBtn:hover {
+  width: 30px;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .heading
+  .closeBtn
+  img {
+  width: 100%;
+  border-radius: 15%;
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  form {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .inputContainer {
+  width: 100%;
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .inputContainer
+  input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .inputContainer
+  input:focus {
+  outline: 1px solid var(--color_12);
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .inputContainer
+  textarea {
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  padding: 10px;
+  resize: none;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .inputContainer
+  textarea:focus {
+  outline: 1px solid var(--color_12);
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .submitBtn {
+  margin-top: 7px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .submitBtn
+  button {
+  width: 60%;
+  height: 37px;
+  background-color: var(--color_13);
+  border: none;
+  color: var(--color_9);
+  outline: none;
+  font-size: 17px;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: 0.1s ease;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .createNoteForm
+  .submitBtn
+  button:hover {
+  background-color: var(--color_9);
+  border: none;
+  color: var(--color_13);
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .descriptionContainer
+  .text {
+  text-align: center;
+  padding: 20px;
+  font-size: 20px;
+}
+.mainContainer
+  .rightSideBar
+  .notesSection
+  .contentContainer
+  .descriptionContainer
+  .mainImg {
+  width: 40%;
+}
+.toggleIcon {
+  background-color: var(--color_8);
+  padding: 5px;
+}
+.toggleIcon img {
+  width: 100%;
+}
+.toggleIcon:hover {
+  background: var(--color_9);
+  border: 1px solid var(--color_14);
+}
+
+.mainContainer .centerContainer .wrapper {
+  padding: 30px;
+}
+
+.mainContainer .centerContainer .wrapper .heading {
+  font-size: 30px;
+  padding: 10px 0px;
+}
+.mainContainer .centerContainer .wrapper .videoContainer {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+.mainContainer .centerContainer .wrapper .textOnly {
+  padding: 10px;
+  font-size: 20px;
+  color: var(--color_15);
+}
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+}
+
+.mainContainer .leftSideBar .menuItem {
+  width: 100%;
+}
+
+.mainContainer .leftSideBar .menuItem .heading {
+  width: 100%;
+}
+
+.mainContainer .leftSideBar .menuItem .heading.active > a {
+  background-color: var(--color_9);
+  color: var(--color_16);
+  border-bottom: 1px solid var(--color_1);
+}
+
+.mainContainer .leftSideBar .menuItem .heading:hover > a {
+  background-color: var(--color_8);
+  color: var(--color_17);
+}
+
+.mainContainer .leftSideBar .menuItem .heading a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--color_1);
+}
+
+.mainContainer .leftSideBar .menuItem .subItems {
+  display: none;
+}
+.mainContainer .leftSideBar .menuItem .subItems.active {
+  display: block;
+}
+.mainContainer .leftSideBar .menuItem .subItems.active {
+}
+.mainContainer .leftSideBar .menuItem .subItems li {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  position: relative;
+  cursor: pointer;
+}
+.mainContainer .leftSideBar .menuItem .subItems li::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color_18);
+  display: none;
+}
+.mainContainer .leftSideBar .menuItem .subItems li:hover {
+  background-color: var(--color_10);
+}
+.mainContainer .leftSideBar .menuItem .subItems li:hover::after {
+  display: none;
+  border-top: 1px solid var(--color_1);
+  border-bottom: 1px solid var(--color_1);
+}
+
+.mainContainer .leftSideBar .menuItem .subItems li .checked {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 50%;
+  padding: 3px;
+  border: 1px solid var(--color_17);
+}
+
+.mainContainer .leftSideBar .menuItem .subItems li .checked.active {
+  background-color: var(--color_19);
+}
+
+.mainContainer .leftSideBar .menuItem .subItems li .checked img {
+  width: 100%;
+}
+
+.mainContainer .leftSideBar .menuItem .subItems li .text {
+  padding: 0px 12px 0px 15px;
+  color: var(--color_20);
+  font-size: 15px;
+}
+
+.mainContainer .leftSideBar .menuItem .subItems li .text span {
+  display: block;
+  margin-top: 5px;
+  font-size: 13px;
+}
+.courseSectionContainer .mobileBottomNav {
+  display: none;
+}
+@media only screen and (max-width: 700px) {
+  .subCategoriesNav {
+    padding: 0px 10px;
+  }
+  .subCategoriesNav .folderStructure .category a {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .subCategoriesNav .nextPrevButtons {
+    display: none;
+  }
+
+  .subCategoriesNav {
+    padding: 0px 5px;
+  }
+  .mainContainer {
+    height: calc(100% - 50px - 50px);
+  }
+  .mainContainer .leftSideBar {
+    transform: translateX(-100%);
+    height: calc(100% - 50px - 40px - 45px);
+    border-right: 1px solid var(--color_10);
+  }
+  .mainContainer .leftSideBar.toggle {
+    transform: translateX(0%);
+  }
+  .mainContainer .rightSideBar {
+    transform: translateX(100%);
+    height: calc(100% - 50px - 40px - 45px);
+    border-left: 1px solid var(--color_10);
+  }
+  .mainContainer .rightSideBar.toggle {
+    transform: translateX(0%);
+  }
+  .mainContainer .leftToggleBar {
+    display: none;
+    height: calc(100% - 50px - 40px - 50px);
+  }
+  .mainContainer .rightToggleBar {
+    display: none;
+    height: calc(100% - 50px - 40px - 50px);
+  }
+  .mainContainer .centerContainer {
+    margin-left: 0px;
+    width: 100%;
+  }
+  .mainContainer .centerContainer .wrapper {
+    padding: 13px;
+  }
+  .subCategoriesNav .folderStructure .category a {
+    font-size: 12px;
+  }
+
+  .courseSectionContainer .mobileBottomNav {
+    display: flex;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 45px;
+    width: 100%;
+    z-index: 5;
+  }
+  .courseSectionContainer .mobileBottomNav .btnContainer {
+    width: 25%;
+  }
+  .courseSectionContainer .mobileBottomNav .btnContainer button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color_21);
+    border: none;
+    outline: none;
+    color: var(--color_9);
+  }
+  .courseSectionContainer
+    .mobileBottomNav
+    .btnContainer:not(:last-child)
+    button {
+    border-right: 1px solid var(--color_9);
+  }
+  .courseSectionContainer .mobileBottomNav .btnContainer button img {
+    width: 25px;
+  }
+  .mainContainer .overlay {
+    display: none;
+    position: fixed;
+    left: 0px;
+    width: 100%;
+    height: calc(100% - 50px - 40px);
+    background-color: rgba(128, 128, 128, 0.514);
+    z-index: 2;
+  }
+  .mainContainer .overlay.active {
+    display: block;
+  }
+
+  .mainContainer
+    .rightSideBar
+    .notesSection
+    .contentContainer
+    .createNoteForm
+    .inputContainer
+    textarea {
+    height: 150px;
+  }
+}
+}

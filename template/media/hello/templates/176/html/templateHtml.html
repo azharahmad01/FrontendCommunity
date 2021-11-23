@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cours Section</title>
+<link href="css/index.css" rel="stylesheet"/>
+<link href="http://localhost:8002/media/hello/templates/176/css/templateCss.css" rel="stylesheet" type="text/css"/></head>
+<body>
+<div class="nav">
+</div>
+<div class="courseSectionContainer">
+<div class="subCategoriesNav">
+<div class="folderStructure">
+<div class="category">
+<a href="#">Machine Learning</a>
+</div>
+<div class="category">
+<a href="#">Week 4</a>
+</div>
+<div class="category">
+<a class="active" href="#">Non Linear Hypotheses</a>
+</div>
+</div>
+<div class="nextPrevButtons">
+<div class="btnContainer">
+<button onclick="">Prev</button>
+</div>
+<div class="btnContainer">
+<button onclick="">Next</button>
+</div>
+</div>
+</div>
+<div class="mainContainer">
+<div class="overlay" onclick="closeOpenSideBars()">
+</div>
+<div class="leftSideBar">
+<div class="menuItem">
+<div class="heading active">
+<a href="#">Neural Networks</a>
+</div>
+<div class="subItems">
+<ul>
+<li>
+<div class="checked active">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+<li>
+<div class="checked active">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+<li>
+<div class="checked">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="menuItem">
+<div class="heading active">
+<a href="#"> Applications</a>
+</div>
+<div class="subItems">
+<ul>
+<li>
+<div class="checked active">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+<li>
+<div class="checked">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+<li>
+<div class="checked">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="menuItem">
+<div class="heading active">
+<a href="#">Reviews</a>
+</div>
+<div class="subItems">
+<ul>
+<li>
+<div class="checked">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+<li>
+<div class="checked">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+<li>
+<div class="checked">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/check.png"/>
+</div>
+<div class="text">
+                                    Model Representation I
+                                    <span>12 min</span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="leftToggleBar">
+<div class="toggleIcon" onclick="toggleLeftBar()">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/menu.png"/>
+</div>
+</div>
+<div class="centerContainer">
+<div class="wrapper">
+<div class="heading">
+                        Non-Linear Hypothesis
+                    </div>
+<div class="videoContainer">
+<iframe class="responsive-iframe" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+</div>
+<div class="textOnly">
+</div>
+</div>
+</div>
+<div class="rightToggleBar">
+<div class="toggleIcon" onclick="toggleRightBar()">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/notes.png"/>
+</div>
+</div>
+<div class="rightSideBar">
+<div class="notesSection">
+<div class="headingContainer">
+<div class="main">
+                            Notes
+                        </div>
+<div class="btnContainer">
+<button onclick="openNoteForm()">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/create.png"/>Create Note
+                            </button>
+</div>
+</div>
+<div class="contentContainer">
+<div class="createNoteForm">
+<form>
+<div class="heading">
+                                    Add a Note!
+                                    <div class="closeBtn" onclick="closeNoteForm()">
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/cross.png"/>
+</div>
+</div>
+<div class="inputContainer titleContainer">
+<input placeholder="Title" type="text"/>
+</div>
+<div class="inputContainer noteContainer">
+<textarea placeholder="Write your note here!" rows="12" type="text"></textarea>
+</div>
+<div class="submitBtn">
+<button>Create </button>
+</div>
+</form>
+</div>
+<div class="descriptionContainer">
+<img class="mainImg" onclick="openNoteForm()" src="http://localhost:8002/media/hello/templates/176/templateMediafiles/notes2.png"/>
+<div class="text">
+                                Create Notes!<br/>
+                                Save them and<br/> revisit for all your future needs.
+                            </div>
+</div>
+</div>
+<div class="allNotesContainer">
+<a>
+<img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/all.png"/>All Notes
+                        </a>
+</div>
+</div>
+</div>
+</div>
+<div class="mobileBottomNav">
+<div class="btnContainer">
+<button onclick="toggleLeftBarSmall()"><img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/menuColor.png"/></button>
+</div>
+<div class="btnContainer">
+<button>PREV</button>
+</div>
+<div class="btnContainer">
+<button>NEXT</button>
+</div>
+<div class="btnContainer">
+<button onclick="toggleRightBarSmall()"><img src="http://localhost:8002/media/hello/templates/176/templateMediafiles/notesYellow.png"/></button>
+</div>
+</div>
+</div>
+<script src="js/index.js"></script>
+<script src="http://localhost:8002/media/hello/templates/176/js/templateJs.js" type="text/javascript"></script></body>
+</html>
